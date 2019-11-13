@@ -1,13 +1,13 @@
-package com.capgemini.Batatas;
+package com.capgemini.delivery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BatatasApplication {
+public class DeliveryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BatatasApplication.class, args);
+		SpringApplication.run(DeliveryApplication.class, args);
 	}
 
 }
