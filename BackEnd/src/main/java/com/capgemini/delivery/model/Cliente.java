@@ -6,12 +6,15 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
 public class Cliente implements java.io.Serializable {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String cpf;
@@ -20,8 +23,6 @@ public class Cliente implements java.io.Serializable {
 	public Cliente() {
 	}
 
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
 	public Integer getId() {
 		return id;
 	}
