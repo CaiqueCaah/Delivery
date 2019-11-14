@@ -1,0 +1,75 @@
+body {
+  background-color: #f1f3f6;
+}
+body h1,
+body h2 {
+  text-align: center;
+}
+body .lista table {
+  /* background-color: green; */
+}
+body .pedido .batata-wrapper {
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid #e6e6e6;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 34px;
+  border-radius: 3px;
+}
+body .pedido .batata-wrapper h3 {
+  margin-top: 0px;
+  font-size: 20px;
+}
+body .pedido .batata-wrapper .contador-wrapper {
+  text-align: center;
+}
+body .pedido .batata-wrapper .contador-wrapper .contador {
+  width: 50px;
+  margin-top: 10px;
+}
+body .pedido .batata-wrapper .icone-success {
+  position: absolute;
+  font-size: 40px;
+  color: #30b830;
+  right: -20px;
+  top: -20px;
+}
+body .pedido .batata-wrapper .preco {
+  padding: 6px;
+  font-weight: bold;
+}
+body .pedido .batata-wrapper .ingredientes {
+  list-style: square;
+  padding-left: 0;
+}
+body .pedido ul {
+  list-style: none;
+}
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+label h4 {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.collapse {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.8s;
+}
+
+input:checked + .collapse {
+    height: 200px;
+}
+
+body .pedido .batata-wrapper .cont-wrapper {
+    text-align: center;
+  }
+  body .pedido .batata-wrapper .cont-wrapper .contador {
+    width: 50px;
+    padding-top: 10px;
+  }
