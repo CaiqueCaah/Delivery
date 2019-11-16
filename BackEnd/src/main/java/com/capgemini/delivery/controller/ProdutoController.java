@@ -13,15 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capgemini.delivery.model.Produto;
 import com.capgemini.delivery.model.Tipo;
-import com.capgemini.delivery.repository.ClienteRepository;
 import com.capgemini.delivery.repository.ProdutoRepository;
 
 @Controller
 @RequestMapping("/produtos")
 public class ProdutoController {
-
-	@Autowired
-	private ClienteRepository clienteRepository;
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
@@ -71,7 +67,7 @@ public class ProdutoController {
 
 	@RequestMapping(value = "/excluir/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
-	void excluirProduto(@PathVariable Long id) {
+	public void excluirProduto(@PathVariable Long id) {
 		try {
 			produtoRepository.deleteById(id);
 		} catch (Exception e) {
@@ -87,7 +83,7 @@ public class ProdutoController {
 
 	@RequestMapping(value = "/atualizar/{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public Produto atualizarProduto(@PathVariable int id, @RequestBody Produto produto) {
+	public Produto atualizarProduto(@PathVariable Long id, @RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 }

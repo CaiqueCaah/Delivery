@@ -1,21 +1,16 @@
 package com.capgemini.delivery.model;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
-@Entity
+@Entity(name = "TB_CLIENTE")
 public class Cliente implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private long id;
 	private String nome;
 	private String cpf;
 	private String email;
@@ -23,7 +18,7 @@ public class Cliente implements java.io.Serializable {
 	public Cliente() {
 	}
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 

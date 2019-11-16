@@ -5,9 +5,9 @@ body h1,
 body h2 {
   text-align: center;
 }
-body .lista table {
-  /* background-color: green; */
-}
+/*body .lista table {
+   background-color: green; 
+}*/
 body .pedido .batata-wrapper {
   background-color: white;
   margin: 0 auto;

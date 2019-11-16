@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name = "TB_PRODUTO")
 public class Produto {
@@ -14,10 +15,16 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
 	private String titulo;
 	private double preco;
-//	private List<Produto> ingredientes;
-//	private List<Produto> adicionais;
+
+	@OneToMany
+	private List<Produto> ingredientes;
+
+	@OneToMany
+	private List<Produto> adicionais;
+	
 	private String obervacao;
 	private Tipo tipo;
 	
@@ -26,8 +33,8 @@ public class Produto {
 		super();
 		this.titulo = titulo;
 		this.preco = preco;
-//		this.ingredientes = ingredientes;
-//		this.adicionais = adicionais;
+		this.ingredientes = ingredientes;
+		this.adicionais = adicionais;
 		this.obervacao = obervacao;
 		this.tipo = tipo;
 		this.id = id;
@@ -53,21 +60,21 @@ public class Produto {
 		this.preco = preco;
 	}
 
-//	public List<Produto> getIngredientes() {
-//		return ingredientes;
-//	}
-//
-//	public void setIngredientes(List<Produto> ingredientes) {
-//		this.ingredientes = ingredientes;
-//	}
-//
-//	public List<Produto> getAdicionais() {
-//		return adicionais;
-//	}
-//
-//	public void setAdicionais(List<Produto> adicionais) {
-//		this.adicionais = adicionais;
-//	}
+	public List<Produto> getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(List<Produto> ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+
+	public List<Produto> getAdicionais() {
+		return adicionais;
+	}
+
+	public void setAdicionais(List<Produto> adicionais) {
+		this.adicionais = adicionais;
+	}
 
 	public String getObervacao() {
 		return obervacao;
