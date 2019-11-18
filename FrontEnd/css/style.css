@@ -1,13 +1,19 @@
 body {
   background-color: #f1f3f6;
 }
+body .etapas {
+  margin-bottom: 20px;
+}
+body .etapas .row .container {
+  text-align: center;
+}
 body h1,
 body h2 {
   text-align: center;
 }
-/*body .lista table {
-   background-color: green; 
-}*/
+body .lista table {
+  /* background-color: green; */
+}
 body .pedido .batata-wrapper {
   background-color: white;
   margin: 0 auto;
@@ -25,15 +31,14 @@ body .pedido .batata-wrapper .contador-wrapper {
   text-align: center;
 }
 body .pedido .batata-wrapper .contador-wrapper .contador {
-  width: 50px;
-  margin-top: 10px;
+  width: 30px;
 }
 body .pedido .batata-wrapper .icone-success {
   position: absolute;
   font-size: 40px;
   color: #30b830;
-  right: -20px;
-  top: -20px;
+  right: -11px;
+  top: -17px;
 }
 body .pedido .batata-wrapper .preco {
   padding: 6px;
@@ -46,30 +51,3 @@ body .pedido .batata-wrapper .ingredientes {
 body .pedido ul {
   list-style: none;
 }
-
-label input[type="checkbox"] {
-    display: none;
-}
-
-label h4 {
-	cursor: pointer;
-	text-decoration: underline;
-}
-
-.collapse {
-    height: 0px;
-    overflow: hidden;
-    transition: height 0.8s;
-}
-
-input:checked + .collapse {
-    height: 200px;
-}
-
-body .pedido .batata-wrapper .cont-wrapper {
-    text-align: center;
-  }
-  body .pedido .batata-wrapper .cont-wrapper .contador {
-    width: 50px;
-    padding-top: 10px;
-  }

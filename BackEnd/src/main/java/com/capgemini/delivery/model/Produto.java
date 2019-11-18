@@ -2,12 +2,13 @@ package com.capgemini.delivery.model;
 
 import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotEmpty;
 
 @Entity(name = "TB_PRODUTO")
 public class Produto {
@@ -18,18 +19,16 @@ public class Produto {
 
 	private String titulo;
 	private double preco;
-
-	@OneToMany
-	private List<Produto> ingredientes;
-
-	@OneToMany
-	private List<Produto> adicionais;
-	
-	private String obervacao;
 	private Tipo tipo;
-	
+	private String obervacao;
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Produto> ingredientes;
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Produto> adicionais;
+
 	public Produto(String titulo, double preco, List<Produto> ingredientes, List<Produto> adicionais, String obervacao,
-			Tipo tipo, int id) {
+			Tipo tipo, long id) {
 		super();
 		this.titulo = titulo;
 		this.preco = preco;
@@ -91,7 +90,6 @@ public class Produto {
 	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
-	
 
 	public long getId() {
 		return id;
@@ -100,11 +98,4 @@ public class Produto {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Produto [id=" + id + ", titulo=" + titulo + ", preco=" + preco + ", ingredientes=" + ingredientes
-//				+ ", adicionais=" + adicionais + ", obervacao=" + obervacao + ", tipo=" + tipo + "]";
-//	}
-	
 }

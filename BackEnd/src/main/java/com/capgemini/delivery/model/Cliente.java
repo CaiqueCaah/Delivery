@@ -1,12 +1,16 @@
 package com.capgemini.delivery.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity(name = "TB_CLIENTE")
-public class Cliente implements java.io.Serializable {
+public class Cliente{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +18,9 @@ public class Cliente implements java.io.Serializable {
 	private String nome;
 	private String cpf;
 	private String email;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Endereco> endereco;
 
 	public Cliente() {
 	}
@@ -22,7 +29,7 @@ public class Cliente implements java.io.Serializable {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -50,4 +57,11 @@ public class Cliente implements java.io.Serializable {
 		this.email = email;
 	}
 
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(List<Endereco> endereco) {
+		this.endereco = endereco;
+	}
 }
